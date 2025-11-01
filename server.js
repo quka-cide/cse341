@@ -1,24 +1,18 @@
 const express = require("express")
 const cors = require("cors")
-const static = require("./backend/routes/static")
+const static = require("./routes/static")
 const path = require("path")
 const dotenv = require("dotenv").config()
 const mongodb = require("./backend/data/connect")
-
-// const getData = async (req, res, next) => {
-//     const result = await mongodb.getDb().db().collection("user").find()
-//     result.toArray().then((list) => {
-//         res.setHeader("Content-Type", "application/json")
-//         res.status(200).json(list[0])
-//     })
-// }
+const contactsRouter = require("./routes/contactsRouter")
 
 const app = express()
-
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
 app.use(static)
+
+// routers
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
@@ -33,6 +27,8 @@ app.get("/professional", async (req, res) => {
     res.status(500).json({ message: "Error fetching data" });
   }
 });
+
+app.use("/contacts", contactsRouter)
 
 const port = process.env.PORT
 
