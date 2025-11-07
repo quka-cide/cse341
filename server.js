@@ -6,7 +6,7 @@ const dotenv = require("dotenv").config()
 
 const mongodb = require('./utilities/connect')
 
-const app = express()
+const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
