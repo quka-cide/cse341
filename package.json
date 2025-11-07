@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "swagger": "node ./swagger.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,11 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "mongodb": "^6.20.0",
-    "nodemon": "^3.1.10"
+    "mongoose": "^8.19.3",
+    "nodemon": "^3.1.10",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui": "^5.30.2",
+    "swagger-ui-express": "^5.0.1"
   }
 }
