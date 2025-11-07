@@ -5,7 +5,7 @@ const doc = {
         title: 'My API',
         description: 'cse341 API',
     },
-    host: process.env.HOST || 'localhost:5500',
+    host: process.env.HOST,
     schemes: ['https', 'http'],
 };
 
